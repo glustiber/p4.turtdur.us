@@ -25,18 +25,50 @@
 			<div class='left-nav'>
 				
 				<ul id='nav-list'>
-					<li><a href='placekitten.com/500/500'>Movies</a></li>
-					<li><a href='placekitten.com/500/500'>TV Shows</a></li>
-					<li><a href='placekitten.com/500/500'>Music</a></li>
-					<li><a href='placekitten.com/500/500'>Video Games</a></li>
-					<li><a href='placekitten.com/500/500'>Books</a></li>
+					<li><a href='#'>Movies</a>
+						<ul>
+							<li><a href='#'>m1</a></li>
+							<li><a href='#'>m2</a></li>
+							<li><a href='#'>m3</a></li>
+						</ul>
+					</li>
+					<li><a href='#'>TV Shows</a>
+						<ul>
+							<li><a href='#'>m1</a></li>
+							<li><a href='#'>m2</a></li>
+							<li><a href='#'>m3</a></li>
+						</ul>
+					</li>
+					<li><a href='#'>Music</a>
+						<ul>
+							<li><a href='#'>m1</a></li>
+							<li><a href='#'>m2</a></li>
+							<li><a href='#'>m3</a></li>
+						</ul>
+					</li>
+					<li><a href='#'>Video Games</a>
+						<ul>
+							<li><a href='#'>m1</a></li>
+							<li><a href='#'>m2</a></li>
+							<li><a href='#'>m3</a></li>
+						</ul>
+					</li>
+					<li><a href='#'>Books</a>
+						<ul>
+							<li><a href='#'>m1</a></li>
+							<li><a href='#'>m2</a></li>
+							<li><a href='#'>m3</a></li>
+						</ul>
+					</li>
 				</ul>
 
 			</div>
 
 			<div class='right-content'>
 
-				<?php if(isset($content)) echo $content; ?>
+				<div class='inner-content'>
+					<?php if(isset($content)) echo $content; ?>
+				</div>
 
 			</div>
 

@@ -51,8 +51,7 @@ header {
 }
 
 .left-nav {
-	background-color:#f7f7f7;
-	width:200px;
+	background-color:#ebebeb;
 	display:block;
 	float:left;
 	overflow:auto;
@@ -60,18 +59,22 @@ header {
 	position:absolute;
 	left:0;
 	border-right:1px solid black;
+	box-shadow:0px 1px 5px rgba(0,0,0,0.25);
+	z-index:250;
+	position:fixed;
 }
 
 .right-content {
-	width:76%;
 	margin-left:200px;
 	padding:10px;
 	margin-top:50px;
+	height:100%;
 }
 
 #nav-list {
 	float:left;
-	width:100%;
+	width:160px;
+	margin:0 auto;
 
 }
 
@@ -88,4 +91,39 @@ header {
 	text-decoration:none;
 	list-style:none;
 	color:#555;
+}
+
+#nav-list li a:hover {
+	background:#CCCCCC;
+	text-decoration:underline;
+	color:#222;
+}
+
+#nav-list li a.active {
+	background:#999;
+	color:#fff;
+}
+
+#nav-list li ul {
+	display:none;
+}
+
+#nav-list li ul li a {
+	padding:10px 25px;
+	background:#ececec;
+	border-bottom:1px dotted #ccc;
+}
+
+.inner-content {
+	background-color:#fff;
+	box-shadow:0px 1px 5px rgba(0,0,0,0.25);
+	z-index:250;
+	height:100%;
+	border-left:1px solid black;
+	border-top:1px solid black;
+	margin-top:5px;
+	padding:0 20px;
+	margin-right:-18px;
+	margin-top:10px;
+	margin-left:3px;
 }
