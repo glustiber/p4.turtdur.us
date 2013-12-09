@@ -6,6 +6,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 
 	<link rel="stylesheet" type="text/css" href="/css/master-styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
 					
 	<!-- Controller Specific JS/CSS -->
 	<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -76,6 +79,7 @@
 
 	</div>
 
+	<script src="/js/master-scripts.js"></script>
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
 </body>
 </html>
