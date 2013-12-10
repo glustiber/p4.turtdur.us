@@ -20,8 +20,8 @@
 
 		<header>
 			<div class='header-menu'>
-				<div class='header-menu-item'>log in</div>
-				<div class='header-menu-item'>sign up</div>
+				<div class='header-menu-item'><a href='/users/login'>log in</a></div>
+				<div class='header-menu-item'><a href='/users/signup'>sign up</a></div>
 				<span class='search'>
 					<input type='text' class='search-bar' id='search-bar-input'>    
 					<input type='submit' value='Search' class='search-bar' id='search-bar-submit'>
@@ -35,7 +35,7 @@
 			<div class='left-nav'>
 				
 				<ul id='nav-list'>
-					<li><a href='#'><img src='/uploads/movies-icon.png' class='nav-icon' alt='movie-icon'><span class='nav-item'>Movies</span></a>
+					<li><a href='/movies' id='movies'><img src='/uploads/movies-icon.png' class='nav-icon' alt='movie-icon'><span class='nav-item'>Movies</span></a>
 						<ul>
 							<li><a href='#'>m1</a></li>
 							<li><a href='#'>m2</a></li>

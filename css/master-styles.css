@@ -61,6 +61,18 @@ header {
 	display:inline;
 }
 
+.header-menu-item a {
+	color:#555;
+	text-decoration:none;
+	cursor:pointer;
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.header-menu-item a:hover {
+	color:#6699cc;
+	text-decoration:underline;
+}
+
 .logo {
 	margin:15px;
 	float:left;
@@ -78,7 +90,7 @@ header {
 }
 
 .right-content {
-	margin-left:200px;
+	margin-left:175px;
 	padding:10px;
 	margin-top:50px;
 	height:100%;
@@ -86,7 +98,7 @@ header {
 
 #nav-list {
 	float:left;
-	width:181px;
+	width:157px;
 	margin-top:20px;
 
 }
@@ -145,7 +157,8 @@ header {
 	background-color:rgb(245,245,245);
 	box-shadow:0px 1px 5px rgba(0,0,0,0.25);
 	z-index:250;
-	height:100%;
+	min-height:100%;
+	height:auto;
 	border-left:1px solid black;
 	border-top:1px solid black;
 	margin-top:5px;
@@ -179,6 +192,12 @@ header {
 
 .movie-poster {
 	width:100px;
+	float:left;
+	margin-right:10px;
+}
+
+.clear {
+	clear:both;
 }
 
 
@@ -198,6 +217,8 @@ header {
 		margin-top:10px;
 		margin-left:0px;
 		border-right:1px solid black;
+		height:auto;
+		min-height:100%;
 	}
 
 	#nav-list {
