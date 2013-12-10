@@ -161,6 +161,29 @@ header {
 
 }
 
+.search {
+	position: absolute;
+	right: 220px;
+	top: 14px;
+}
+
+.search-bar {
+	background-color: white;
+	border: 1px solid #555;
+	height:20px;
+	padding:0px;
+	margin:0px;
+	display:inline;
+	float:left;
+}
+
+.movie-poster {
+	width:100px;
+}
+
+
+
+/* MEDIA QUERIES */
 @media only screen and (max-width : 1024px){
 
 	.right-content {
@@ -181,13 +204,31 @@ header {
 		width:20px;
 	}
 
-	#nav-list li ul {
+	#nav-list > li > ul {
+		display:none;
+	}
+
+	#nav-list li ul li {
+		display:none;
+	}
+
+	#nav-list li ul li a {
 		display:none;
 	}
 
 	.nav-item {
 		display:none;
 	}
+
+	#nav-list li a.active {
+	background-color:rgb(245,245,245);
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	box-shadow:9px 1px 5px rgba(0,0,0,0.25);
+	z-index:250;
+	font-weight:bold;
+
+}
 
 }
 

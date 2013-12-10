@@ -22,6 +22,10 @@
 			<div class='header-menu'>
 				<div class='header-menu-item'>log in</div>
 				<div class='header-menu-item'>sign up</div>
+				<span class='search'>
+					<input type='text' class='search-bar' id='search-bar-input'>    
+					<input type='submit' value='Search' class='search-bar' id='search-bar-submit'>
+				</form>
 			</div>
 			<div class='logo'>p4.turtdur.us</div>
 		</header>
