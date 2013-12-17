@@ -141,7 +141,7 @@ header {
 }
 
 #nav-list li ul li a {
-	padding:10px 50px;
+	padding:10px 30px;
 	background:grey;
 	color:ghostwhite;
 }
@@ -203,7 +203,7 @@ header {
 
 
 /* MEDIA QUERIES */
-@media only screen and (max-width : 1024px){
+@media only screen and (max-width : 969px){
 
 	.right-content {
 		margin-left:40px;
@@ -253,7 +253,7 @@ header {
 
 }
 
-@media only screen and (min-width : 550px) {
+@media only screen and (max-width : 550px) {
 
 }
 

@@ -1,12 +1,13 @@
+$('#nav-list > li > a').click(function(){
 
-  $('#nav-list > li > a').click(function(){
-    if ($(this).attr('class') != 'active'){
-      $('#nav-list li ul').slideUp();
-      $(this).next().slideToggle();
-      $('#nav-list li a').removeClass('active');
-      $(this).addClass('active');
-    }
-  });
+	if ($(this).attr('class') != 'active'){
+		$('#nav-list li ul').slideUp();
+	  	$(this).next().slideToggle();
+	  	$('#nav-list li a').removeClass('active');
+	  	$(this).addClass('active');
+	} 
+
+});
 
 var apikey = "u8fuatjbufuhjzsq8rtg9bgt";
 var baseUrl = "http://api.rottentomatoes.com/api/public/v1.0";
@@ -69,33 +70,102 @@ $('#search-bar-input').keypress(function (e) {
 	}    } 
 
 });
-/*
-$('#movies').click(function() {
+
+$('#nav-list > li').click(function() {
+
+	console.log($(this).attr('id'));
 
     $.ajax({
-        type: 'POST',
-        url: '/movies',
-        beforeSubmit: function() {
-        	$('#movies-index').html("Loading...");
-    	},
+    	type: "POST",
+    	url: "/" + $(this).attr('id'),
         success: function(response) { 
 
-            // For debugging purposes
-            // console.log(response);
+        	//console.log(response);
+            $('.inner-content').html(response);
 
-            // Example response: {"post_count":"9","user_count":"13","most_recent_post":"May 23, 2012 1:14am"}
-
-            // Parse the JSON results into an array
-            //var data = $.parseJSON(response);
-
-            // Inject the data into the page
-            $('#movies-index').html('<p>TESTING 123</p>');
-           
         },
+
     });
+
 });
-*/
+
+//var apikey = "u8fuatjbufuhjzsq8rtg9bgt";
+//var baseUrl = "http://api.rottentomatoes.com/api/public/v1.0";
+
+var topRentalsUrl = baseUrl + '/lists/dvds/top_rentals.json?limit=10&country=us&apikey=' + apikey;
+var inTheatersUrl = baseUrl + '/lists/movies/in_theaters.json?page_limit=16&page=1&country=us&apikey=' + apikey;
+var comingSoonUrl = baseUrl + '/lists/movies/upcoming.json?page_limit=10&page=1&country=us&apikey=' + apikey;
 
 
+$('#top-rentals').click(function() {
 
+	$.ajax({
+	    url: topRentalsUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+	 	$('.inner-content').html('<h2>Top 10 Movie Rentals</h2>');
+	 	var movies = data.movies;
+	 	$.each(movies, function(index, movie) {
+	   		$('.inner-content').append('<h2>' + movie.title + '</h2>');
+	   		$('.inner-content').append('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
+	 		$('.inner-content').append('<p>Critics Score: ' + movie.ratings.critics_score + '</p>')
+	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
+	 		$('.inner-content').append('<div class="clear"></div>')
+
+	 	});
+	}
+
+});
+
+$('#in-theaters').click(function() {
+
+	$.ajax({
+	    url: inTheatersUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+	 	$('.inner-content').html('<h2>Currently in Theaters</h2>');
+	 	var movies = data.movies;
+	 	$.each(movies, function(index, movie) {
+	   		$('.inner-content').append('<h2>' + movie.title + '</h2>');
+	   		$('.inner-content').append('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
+	 		$('.inner-content').append('<p>Critics Score: ' + movie.ratings.critics_score + '</p>')
+	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
+	 		$('.inner-content').append('<div class="clear"></div>')
+
+	 	});
+	}
+
+});
+
+$('#coming-soon').click(function() {
+
+	$.ajax({
+	    url: comingSoonUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+	 	$('.inner-content').html('<h2>Coming Soon to a Theater Near You</h2>');
+	 	var movies = data.movies;
+	 	$.each(movies, function(index, movie) {
+	   		$('.inner-content').append('<h2>' + movie.title + '</h2>');
+	   		$('.inner-content').append('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
+	 		$('.inner-content').append('<p>Critics Score: ' + movie.ratings.critics_score + '</p>')
+	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
+	 		$('.inner-content').append('<div class="clear"></div>')
+
+	 	});
+	}
+
+});
 

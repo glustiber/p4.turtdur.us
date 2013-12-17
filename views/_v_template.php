@@ -25,7 +25,7 @@
 				<span class='search'>
 					<input type='text' class='search-bar' id='search-bar-input'>    
 					<input type='submit' value='Search' class='search-bar' id='search-bar-submit'>
-				</form>
+				</span>
 			</div>
 			<div class='logo'>p4.turtdur.us</div>
 		</header>
@@ -35,35 +35,36 @@
 			<div class='left-nav'>
 				
 				<ul id='nav-list'>
-					<li><a href='/movies' id='movies'><img src='/uploads/movies-icon.png' class='nav-icon' alt='movie-icon'><span class='nav-item'>Movies</span></a>
+					<li id="movies"><a href='#'><img src='/uploads/movies-icon.png' class='nav-icon' alt='movie-icon'><span class='nav-item'>Movies</span></a>
+						<ul>
+							<li><a href='#'>All-time</a></li>
+							<li id="in-theaters"><a href='#'>In-theaters</a></li>
+							<li id="coming-soon"><a href='#'>Coming soon</a></li>
+							<li id="top-rentals"><a href='#'>Top Rentals</a></li>
+						</ul>
+					</li>
+					<li id="tvshows"><a href='#'><img src='/uploads/tv-icon.png' class='nav-icon' alt='tv-icon'><span class='nav-item'>TV Shows</span></a>
 						<ul>
 							<li><a href='#'>m1</a></li>
 							<li><a href='#'>m2</a></li>
 							<li><a href='#'>m3</a></li>
 						</ul>
 					</li>
-					<li><a href='#'><img src='/uploads/tv-icon.png' class='nav-icon' alt='tv-icon'><span class='nav-item'>TV Shows</span></a>
+					<li id="music"><a href='#'><img src='/uploads/music-icon.png' class='nav-icon' alt='music-icon'><span class='nav-item'>Music</span></a>
 						<ul>
 							<li><a href='#'>m1</a></li>
 							<li><a href='#'>m2</a></li>
 							<li><a href='#'>m3</a></li>
 						</ul>
 					</li>
-					<li><a href='#'><img src='/uploads/music-icon.png' class='nav-icon' alt='music-icon'><span class='nav-item'>Music</span></a>
+					<li id="videogames"><a href='#'><img src='/uploads/games-icon.png' class='nav-icon' alt='games-icon'><span class='nav-item'>Video Games</span></a>
 						<ul>
 							<li><a href='#'>m1</a></li>
 							<li><a href='#'>m2</a></li>
 							<li><a href='#'>m3</a></li>
 						</ul>
 					</li>
-					<li><a href='#'><img src='/uploads/games-icon.png' class='nav-icon' alt='games-icon'><span class='nav-item'>Video Games</span></a>
-						<ul>
-							<li><a href='#'>m1</a></li>
-							<li><a href='#'>m2</a></li>
-							<li><a href='#'>m3</a></li>
-						</ul>
-					</li>
-					<li><a href='#'><img src='/uploads/books-icon.png' class='nav-icon' alt='books-icon'><span class='nav-item'>Books</span></a>
+					<li id="books"><a href='#'><img src='/uploads/books-icon.png' class='nav-icon' alt='books-icon'><span class='nav-item'>Books</span></a>
 						<ul>
 							<li><a href='#'>m1</a></li>
 							<li><a href='#'>m2</a></li>

@@ -1,6 +1,6 @@
 <?php
 
-class movies_controller extends base_controller {
+class tvshows_controller extends base_controller {
 
 	public function __construct() {
         parent::__construct();
@@ -14,9 +14,9 @@ class movies_controller extends base_controller {
     public function index() {
 
     # Set up the View
-    $this->template->content = View::instance('v_movies_index');
+    $this->template->content = View::instance('v_tvshows_index');
     //$view = View::instance('v_movies_index');
-    $this->template->title   = "Top Movies";
+    $this->template->title   = "TV Shows - Coming Soon!";
 
     # Render the View
     echo $this->template->content;
