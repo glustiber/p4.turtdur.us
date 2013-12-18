@@ -138,6 +138,19 @@ $('#top-rentals').click(function() {
 
 	// callback for when we get back the results
 	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/toprentals',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+		/*
 	 	$('.inner-content').html('<h2>Top 10 Movie Rentals</h2>');
 	 	var movies = data.movies;
 	 	$.each(movies, function(index, movie) {
@@ -147,7 +160,7 @@ $('#top-rentals').click(function() {
 	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
 	 		$('.inner-content').append('<div class="clear"></div>')
 
-	 	});
+	 	});*/
 	}
 
 });
@@ -162,6 +175,19 @@ $('#in-theaters').click(function() {
 
 	// callback for when we get back the results
 	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/intheaters',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+		/*
 	 	$('.inner-content').html('<h2>Currently in Theaters</h2>');
 	 	var movies = data.movies;
 	 	$.each(movies, function(index, movie) {
@@ -171,7 +197,7 @@ $('#in-theaters').click(function() {
 	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
 	 		$('.inner-content').append('<div class="clear"></div>')
 
-	 	});
+	 	});*/
 	}
 
 });
@@ -186,7 +212,20 @@ $('#coming-soon').click(function() {
 
 	// callback for when we get back the results
 	function searchCallback(data) {
-	 	$('.inner-content').html('<h2>Coming Soon to a Theater Near You</h2>');
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/comingsoon',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+
+	 	/*$('.inner-content').html('<h2>Coming Soon to a Theater Near You</h2>');
 	 	var movies = data.movies;
 	 	$.each(movies, function(index, movie) {
 	   		$('.inner-content').append('<h2>' + movie.title + '</h2>');
@@ -195,7 +234,7 @@ $('#coming-soon').click(function() {
 	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
 	 		$('.inner-content').append('<div class="clear"></div>')
 
-	 	});
+	 	});*/
 	}
 
 });

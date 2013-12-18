@@ -42,6 +42,44 @@ class movies_controller extends base_controller {
 
     }
 
+    public function toprentals() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_toprentals');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Top Rentals";
+
+        $this->template->content->results = $_POST[movies];
+
+        # Render the View
+        echo $this->template->content;
+    }
+
+    public function intheaters() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_intheaters');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "In Theaters";
+
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
+
+     public function comingsoon() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_comingsoon');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Coming Soon";
+
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
+
+
+
    /* public function p_index() {
     	# Set up the view
     	$view = View::instance('v_movies_p_index');

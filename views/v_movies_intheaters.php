@@ -1,4 +1,4 @@
-<h2>Search results for .....</h2>
+<h2>In Theaters</h2>
 
 <?php foreach($results as $result): ?>
 
