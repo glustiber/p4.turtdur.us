@@ -52,7 +52,7 @@ header {
 
 .header-menu {
 	float:right;
-	width:190px;
+	width:auto;
 	margin:15px;
 }
 

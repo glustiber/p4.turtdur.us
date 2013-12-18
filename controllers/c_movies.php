@@ -13,14 +13,28 @@ class movies_controller extends base_controller {
 
     public function index() {
 
-    # Set up the View
-    $this->template->content = View::instance('v_movies_index');
-    //$view = View::instance('v_movies_index');
-    $this->template->title   = "Top Movies";
+        # Set up the View
+        $this->template->content = View::instance('v_movies_index');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Top Movies";
 
-    # Render the View
-    echo $this->template->content;
-    //echo $view;
+        # Render the View
+        echo $this->template->content;
+        //echo $view;
+
+    }
+
+    public function searchresults() {
+
+        # Set up the View
+        $this->template->content = View::instance('v_movies_searchresults');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Search results";
+
+        $movies = $_POST;
+
+        # Render the View
+        echo $this->template->content;
 
     }
 

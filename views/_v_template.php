@@ -20,8 +20,14 @@
 
 		<header>
 			<div class='header-menu'>
-				<div class='header-menu-item'><a href='/users/login'>log in</a></div>
-				<div class='header-menu-item'><a href='/users/signup'>sign up</a></div>
+
+				<?php if($user): ?>
+					<div class='header-menu-item'><a href='/users/logout'>logout</a></div>
+		        <?php else: ?>
+			        <div class='header-menu-item'><a href='/users/login'>log in</a></div>
+					<div class='header-menu-item'><a href='/users/signup'>sign up</a></div>
+		        <?php endif; ?>
+
 				<span class='search'>
 					<input type='text' class='search-bar' id='search-bar-input'>    
 					<input type='submit' value='Search' class='search-bar' id='search-bar-submit'>

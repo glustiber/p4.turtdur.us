@@ -50,30 +50,41 @@ $('#search-bar-input').keypress(function (e) {
 
   	// send off the query
 	$.ajax({
-	    url: moviesSearchUrl + '&q=' + encodeURI(query) + '&page_limit=10',
+	    url: moviesSearchUrl + '&q=' + encodeURI(query) + '&page_limit=5',
 	    dataType: "jsonp",
 	    success: searchCallback
 	});
 
-	// callback for when we get back the results
 	function searchCallback(data) {
-	 	$('.inner-content').append('Found ' + data.total + ' results for ' + query);
+		var movies = data.movies;
+		$.ajax({
+			type='POST',
+			url: '/movies/searchresults',
+			data: movies
+		});
+	}
+
+	// callback for when we get back the results
+	/*function searchCallback(data) {
+	 	$('.inner-content').html('Found ' + data.total + ' results for ' + query);
 	 	var movies = data.movies;
 	 	$.each(movies, function(index, movie) {
-	   		$('.inner-content').append('<h2>' + movie.title + ' (' + movie.year + ')' + '</h2>');
-	   		$('.inner-content').append('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
-	 		$('.inner-content').append('<p>Critics Score: ' + movie.ratings.critics_score + '</p>');
-	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>');
-	 		$('.inner-content').append('<div class="clear"></div>');
+	   		$('.inner-content').html('<h2>' + movie.title + ' (' + movie.year + ')' + '</h2>');
+	   		$('.inner-content').html('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
+	 		$('.inner-content').html('<p>Critics Score: ' + movie.ratings.critics_score + '</p>');
+	 		$('.inner-content').html('<p>Audience Score: ' + movie.ratings.audience_score + '</p>');
+	 		$('.inner-content').html('<div class="clear"></div>');
 
 	 	});
-	}    } 
+	}*/    
+
+	} 
 
 });
 
 $('#nav-list > li').click(function() {
 
-	console.log($(this).attr('id'));
+	//console.log($(this).attr('id'));
 
     $.ajax({
     	type: "POST",
@@ -102,6 +113,10 @@ $('#top-rentals').click(function() {
 	$.ajax({
 	    url: topRentalsUrl,
 	    dataType: "jsonp",
+	    /*beforeSend: function() {
+            // Display a loading message while waiting for the ajax call to complete
+            $('.inner-content').html("<h2>Loading...</h2>");
+        },*/
 	    success: searchCallback
 	});
 
