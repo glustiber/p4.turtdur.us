@@ -30,8 +30,12 @@ class movies_controller extends base_controller {
         $this->template->content = View::instance('v_movies_searchresults');
         //$view = View::instance('v_movies_index');
         $this->template->title   = "Search results";
-
-        $movies = $_POST;
+/*
+        echo '<pre>';
+        print_r($_POST[movies]);
+        echo '</pre>';
+*/
+        $this->template->content->results = $_POST[movies];
 
         # Render the View
         echo $this->template->content;

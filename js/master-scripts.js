@@ -26,9 +26,22 @@ $('#search-bar-submit').click(function() {
 	    success: searchCallback
 	});
 
-	// callback for when we get back the results
 	function searchCallback(data) {
-	 	$('.inner-content').append('Found ' + data.total + ' results for ' + query);
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/searchresults',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+	}
+
+	// callback for when we get back the results
+	/*function searchCallback(data) {
+	 	$('.inner-content').html('Found ' + data.total + ' results for ' + query);
 	 	var movies = data.movies;
 	 	$.each(movies, function(index, movie) {
 	   		$('.inner-content').append('<h2>' + movie.title + '</h2>');
@@ -37,7 +50,7 @@ $('#search-bar-submit').click(function() {
 	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>')
 
 	 	});
-	}
+	}*/
 
 });
 
@@ -50,17 +63,21 @@ $('#search-bar-input').keypress(function (e) {
 
   	// send off the query
 	$.ajax({
-	    url: moviesSearchUrl + '&q=' + encodeURI(query) + '&page_limit=5',
+	    url: moviesSearchUrl + '&q=' + encodeURI(query) + '&page_limit=10',
 	    dataType: "jsonp",
 	    success: searchCallback
 	});
 
 	function searchCallback(data) {
-		var movies = data.movies;
+		var movies = data;
+
 		$.ajax({
-			type='POST',
-			url: '/movies/searchresults',
-			data: movies
+			type:'POST',
+			url:'/movies/searchresults',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
 		});
 	}
 
@@ -69,16 +86,15 @@ $('#search-bar-input').keypress(function (e) {
 	 	$('.inner-content').html('Found ' + data.total + ' results for ' + query);
 	 	var movies = data.movies;
 	 	$.each(movies, function(index, movie) {
-	   		$('.inner-content').html('<h2>' + movie.title + ' (' + movie.year + ')' + '</h2>');
-	   		$('.inner-content').html('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
-	 		$('.inner-content').html('<p>Critics Score: ' + movie.ratings.critics_score + '</p>');
-	 		$('.inner-content').html('<p>Audience Score: ' + movie.ratings.audience_score + '</p>');
-	 		$('.inner-content').html('<div class="clear"></div>');
+	   		$('.inner-content').append('<h2>' + movie.title + ' (' + movie.year + ')' + '</h2>');
+	   		$('.inner-content').append('<img src="' + movie.posters.thumbnail + '" class="movie-poster"/>');
+	 		$('.inner-content').append('<p>Critics Score: ' + movie.ratings.critics_score + '</p>');
+	 		$('.inner-content').append('<p>Audience Score: ' + movie.ratings.audience_score + '</p>');
+	 		$('.inner-content').append('<div class="clear"></div>');
 
 	 	});
-	}*/    
-
-	} 
+	} */   
+} 
 
 });
 
