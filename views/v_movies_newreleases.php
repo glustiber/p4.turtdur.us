@@ -1,8 +1,8 @@
-<h2>Search results for .....</h2>
+<h2>New Releases</h2>
 
 <?php foreach($results as $result): ?>
 
-	 <h3><?=$result['title']?></h3>
+	 <p><?=$result['title']?></p>
 	 <img src="<?=$result['posters']['detailed']?>" class="movie-poster"/>
 	 <p>Critics score: <?=$result['ratings']['critics_score']?></p>
 	 <p>Audience score: <?=$result['ratings']['audience_score']?></p>

@@ -16,7 +16,7 @@ class movies_controller extends base_controller {
         # Set up the View
         $this->template->content = View::instance('v_movies_index');
         //$view = View::instance('v_movies_index');
-        $this->template->title   = "Top Movies";
+        $this->template->title   = "Movies";
 
         # Render the View
         echo $this->template->content;
@@ -78,8 +78,65 @@ class movies_controller extends base_controller {
         echo $this->template->content;
     }
 
+    public function boxoffice() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_boxoffice');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Box Office";
 
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
 
+    public function opening() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_opening');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Opening Soon";
+
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
+
+    public function currentreleases() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_currentreleases');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Current Releases";
+
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
+
+    public function newreleases() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_newreleases');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "New Releases";
+
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
+
+    public function upcomingdvds() {
+        # Set up the View
+        $this->template->content = View::instance('v_movies_upcomingdvds');
+        //$view = View::instance('v_movies_index');
+        $this->template->title   = "Upcoming DVDs";
+
+        $this->template->content->results = $_POST[movies];
+        
+        # Render the View
+        echo $this->template->content;
+    }
    /* public function p_index() {
     	# Set up the view
     	$view = View::instance('v_movies_p_index');

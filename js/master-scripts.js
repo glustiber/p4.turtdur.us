@@ -98,6 +98,8 @@ $('#search-bar-input').keypress(function (e) {
 
 });
 
+/*
+// Activate menu, vid games, etc
 $('#nav-list > li').click(function() {
 
 	//console.log($(this).attr('id'));
@@ -115,13 +117,19 @@ $('#nav-list > li').click(function() {
     });
 
 });
+*/
 
 //var apikey = "u8fuatjbufuhjzsq8rtg9bgt";
 //var baseUrl = "http://api.rottentomatoes.com/api/public/v1.0";
 
-var topRentalsUrl = baseUrl + '/lists/dvds/top_rentals.json?limit=10&country=us&apikey=' + apikey;
-var inTheatersUrl = baseUrl + '/lists/movies/in_theaters.json?page_limit=16&page=1&country=us&apikey=' + apikey;
-var comingSoonUrl = baseUrl + '/lists/movies/upcoming.json?page_limit=10&page=1&country=us&apikey=' + apikey;
+var topRentalsUrl = baseUrl + '/lists/dvds/top_rentals.json?limit=15&country=us&apikey=' + apikey;
+var inTheatersUrl = baseUrl + '/lists/movies/in_theaters.json?page_limit=15&page=1&country=us&apikey=' + apikey;
+var comingSoonUrl = baseUrl + '/lists/movies/upcoming.json?page_limit=15&page=1&country=us&apikey=' + apikey;
+var boxOfficeUrl = baseUrl + '/lists/movies/box_office.json?limit=15&country=us&apikey=' + apikey;
+var openingUrl = baseUrl + '/lists/movies/opening.json?limit=15&country=us&apikey=' + apikey;
+var currentReleasesUrl = baseUrl + '/lists/dvds/current_releases.json?page_limit=15&page=1&country=us&apikey=' + apikey;
+var newReleasesUrl = baseUrl + '/lists/dvds/new_releases.json?page_limit=15&page=1&country=us&apikey=' + apikey;
+var upcomingDvdsUrl = baseUrl + '/lists/dvds/upcoming.json?page_limit=15&page=1&country=us&apikey=' + apikey;
 
 
 $('#top-rentals').click(function() {
@@ -236,6 +244,197 @@ $('#coming-soon').click(function() {
 
 	 	});*/
 	}
+
+});
+
+$('#box-office').click(function() {
+
+	$.ajax({
+	    url: boxOfficeUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/boxoffice',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+	}
+
+});
+
+$('#opening').click(function() {
+
+	$.ajax({
+	    url: openingUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/opening',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+	}
+
+});
+
+$('#current-releases').click(function() {
+
+	$.ajax({
+	    url: currentReleasesUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/currentreleases',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+	}
+
+});
+
+$('#new-releases').click(function() {
+
+	$.ajax({
+	    url: newReleasesUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/newreleases',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+	}
+
+});
+
+$('#upcoming-dvds').click(function() {
+
+	$.ajax({
+	    url: upcomingDvdsUrl,
+	    dataType: "jsonp",
+	    success: searchCallback
+	});
+
+	// callback for when we get back the results
+	function searchCallback(data) {
+
+		var movies = data;
+
+		$.ajax({
+			type:'POST',
+			url:'/movies/upcomingdvds',
+			data: movies,
+			success: function(response) {
+				$('.inner-content').html(response);
+			},
+		});
+
+	}
+
+});
+
+/*
+$('#movies').click(function() {
+
+	$.ajax({
+		type:'POST',
+		url:'/movies',
+		success: function(response) {
+			$('.inner-content').html(response);
+		},
+	});
+
+});
+*/
+$('#tvshows').click(function() {
+
+	$.ajax({
+		type:'POST',
+		url:'/tvshows',
+		success: function(response) {
+			$('.inner-content').html(response);
+		},
+	});
+
+});
+
+$('#music').click(function() {
+
+	$.ajax({
+		type:'POST',
+		url:'/music',
+		success: function(response) {
+			$('.inner-content').html(response);
+		},
+	});
+
+});
+
+$('#videogames').click(function() {
+
+	$.ajax({
+		type:'POST',
+		url:'/videogames',
+		success: function(response) {
+			$('.inner-content').html(response);
+		},
+	});
+
+});
+
+$('#books').click(function() {
+
+	$.ajax({
+		type:'POST',
+		url:'/books',
+		success: function(response) {
+			$('.inner-content').html(response);
+		},
+	});
 
 });
 

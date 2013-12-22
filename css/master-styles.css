@@ -141,7 +141,7 @@ header {
 }
 
 #nav-list li ul li a {
-	padding:10px 30px;
+	padding:5px 30px;
 	background:grey;
 	color:ghostwhite;
 }
@@ -164,7 +164,7 @@ header {
 	margin-top:5px;
 	padding:25px 25px;
 	margin-right:-18px;
-	margin-top:10px;
+	margin-top:-15px;
 	margin-left:3px;
 }
 
@@ -200,9 +200,15 @@ header {
 	clear:both;
 }
 
+.movie-menu-title {
+	padding:7.5px;
+	background-color:#CCCCCC;
+	font-weight:bold;
+}
 
 
-/* MEDIA QUERIES */
+
+/*
 @media only screen and (max-width : 969px){
 
 	.right-content {
@@ -214,7 +220,7 @@ header {
 
 	.inner-content {
 		margin-right:0px;
-		margin-top:10px;
+		margin-top:-15px;
 		margin-left:0px;
 		border-right:1px solid black;
 		height:auto;
@@ -257,4 +263,4 @@ header {
 
 }
 
-
+*/
