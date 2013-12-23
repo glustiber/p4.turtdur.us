@@ -2,9 +2,11 @@
 
 <?php foreach($results as $result): ?>
 
-	 <h3><?=$result['title']?></h3>
-	 <img src="<?=$result['posters']['detailed']?>" class="movie-poster"/>
-	 <p>Critics score: <?=$result['ratings']['critics_score']?></p>
-	 <p>Audience score: <?=$result['ratings']['audience_score']?></p>
-	 <div class="clear"></div>
+	<div class="movie-box">
+		<img src="<?=$result['posters']['detailed']?>" class="movie-poster"/>
+		<h3><?=$result['title']?></h3>
+		<p>Critics score: <?=$result['ratings']['critics_score']?></p>
+		<p>Audience score: <?=$result['ratings']['audience_score']?></p>
+		<div class="clear"></div>
+	</div>
 <?php endforeach; ?>

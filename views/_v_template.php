@@ -25,6 +25,14 @@
 			<div class='header-menu'>
 
 				<?php if($user): ?>
+					<div class='header-menu-item' id='account-menu'><a href='#'>account</a>
+					<ul>
+						<li><a href='/users/profile/'>view profile</a></li>
+			    		<li><a href='/users/editprofile'>edit profile</a></li>
+			    		<li><a href='/users/mymovies'>my movies</a></li>
+			    		<li><a href='/users/myfriends'>my friends</a></li>
+			    	</ul>			
+			    	</div>
 					<div class='header-menu-item'><a href='/users/logout'>logout</a></div>
 		        <?php else: ?>
 			        <div class='header-menu-item'><a href='/users/login'>log in</a></div>

@@ -57,7 +57,7 @@ header {
 }
 
 .header-menu-item {
-	margin:20px;
+	margin:15px;
 	display:inline;
 }
 
@@ -176,7 +176,7 @@ header {
 
 .search {
 	position: absolute;
-	right: 220px;
+	right: 250px;
 	top: 14px;
 }
 
@@ -206,6 +206,50 @@ header {
 	font-weight:bold;
 }
 
+.movie-box {
+	border:1px solid black!important;
+	background-color:white!important;
+	padding:5px!important;
+	margin-bottom:5px!important;
+}
+
+.header-menu-item > ul {
+	display:none;
+}
+
+.header-menu-item:hover ul {
+	display:block;
+}
+
+.header-menu-item ul {
+	display:none;
+	position:absolute;
+	top:100%;
+	background:#fff;
+	padding:10px;
+	box-shadow:0px 1px 5px rgba(0,0,0,0.25);
+	border:3px solid;
+	top:32px;
+	left:auto;
+}
+
+.header-menu-item ul li {
+	float: none; 
+	position: relative;
+	display:block;
+	padding:10px;
+	/*margin-left:-20px;
+	margin-right:-20px;*/
+}
+
+.header-menu-item ul li a {
+	padding:10px 20px;
+	color:#555;
+}
+
+#account-menu {
+	padding:20px;
+}
 
 
 /*

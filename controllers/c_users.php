@@ -137,6 +137,48 @@ class users_controller extends base_controller {
         Router::redirect("/");
     }
 
+    public function profile($user_name = NULL) {
+
+        # If user is blank, they're not logged in; redirect them to the login page
+        if(!$this->user) {
+            Router::redirect('/users/login');
+        }
+
+        # If they weren't redirected away, continue:
+
+        $this->template->content = View::instance('v_users_profile');
+
+        # $title is another variable used in _v_template to set the <title> of the page
+        $this->template->title = "Profile of ".$this->user->first_name;
+
+/*
+        $q = "SELECT *
+            FROM posts
+            WHERE user_id = '".$this->user->user_id."'
+            ORDER BY created DESC";
+
+        $posts = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->posts = $posts;
+
+        # figure out how many likes each post has
+        $q = "SELECT post_id_liked, 
+            COUNT(*) AS num_likes
+        FROM posts_users GROUP BY post_id_liked";
+
+        # $numlikes = DB::instance(DB_NAME)->select_rows($q);
+        $numlikes = DB::instance(DB_NAME)->select_array($q, 'post_id_liked');
+
+        $this->template->content->numlikes = $numlikes;
+*/
+        
+        # Render View
+        echo $this->template;
+    }
+
+
+
+
 } # end of the class
 
 ?>
