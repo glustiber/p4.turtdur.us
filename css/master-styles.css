@@ -142,8 +142,9 @@ header {
 
 #nav-list li ul li a {
 	padding:5px 30px;
-	background:grey;
-	color:ghostwhite;
+	background:white;
+	/*background:grey;
+	color:ghostwhite;*/
 }
 
 #nav-list li ul li a:hover {
@@ -202,8 +203,8 @@ header {
 
 .movie-menu-title {
 	padding:7.5px;
-	background-color:#CCCCCC;
-	font-weight:bold;
+	background-color:grey;
+	color:ghostwhite;
 }
 
 .movie-box {
@@ -252,7 +253,7 @@ header {
 }
 
 .profile-pic {
-	width:200px;
+	width:150px;
 	/*box-shadow:0px 1px 5px rgba(0,0,0,0.25);
 	border:2px solid #555;*/
 	z-index:5000;
@@ -266,6 +267,14 @@ header {
 	border:2px solid #555;*/
 	/*z-index:5000;*/
 	float:left;
+}
+
+#movies ul {
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	border:1px solid black;
 }
 
 

@@ -1,4 +1,4 @@
-	<h2>My Profile</h2>
+<h2>My Profile</h2>
 
 	<? if($user->profile_pic != ""): ?>
 		<div class="profile-pic">
