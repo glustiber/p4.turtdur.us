@@ -171,13 +171,71 @@ class users_controller extends base_controller {
 
         $this->template->content->numlikes = $numlikes;
 */
-        
+
         # Render View
         echo $this->template;
     }
 
+    public function editprofile() {
 
+        # If user is blank, they're not logged in; redirect them to the login page
+        if(!$this->user) {
+            Router::redirect('/users/login');
+        }
 
+        # Setup view
+        $this->template->content = View::instance('v_users_editprofile');
+        $this->template->title   = "Edit Profile";
+
+        #  Set client files that need to load in the <head>
+        $client_files_head = Array('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js','http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js','/js/validate-editprofile.js');
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);
+
+        # Render template
+        echo $this->template;
+    }
+
+    public function p_editprofile() {
+
+        # Sanitize the user entered data
+        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
+
+        # Filter post, create new array with only submitted fields
+        $data = array_filter($_POST);
+
+        # If password was updated, encrypt it
+        if(isset($data['password'])) {
+            $data['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+        }
+
+        # If profile pic was uploaded, save it in /uploads/avatars/, and save file path to $data['profile_pic']
+        if($_FILES["profile_pic"]["error"] == 0) {
+
+            $avatar_upload = APP_PATH.AVATAR_PATH.$this->user->user_id.".png";
+
+            if (move_uploaded_file($_FILES['profile_pic']['tmp_name'], $avatar_upload)) {
+
+                $avatar_pic = new Image($avatar_upload);
+
+                $data['profile_pic'] = AVATAR_PATH.$this->user->user_id.".png";
+
+            } 
+            else {
+                echo "Possible file upload attack!\n";
+            }
+
+        }
+
+        # Set time modified to now
+        $data['modified'] = Time::now();
+
+        # Update
+        DB::instance(DB_NAME)->update("users", $data, "WHERE user_id = '".$this->user->user_id."'");
+
+        # Redirect to profile.
+        Router::redirect("/users/profile");
+
+    }
 
 } # end of the class
 

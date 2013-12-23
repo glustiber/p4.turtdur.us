@@ -1,10 +1,10 @@
 	<h2>My Profile</h2>
-<!--
-		<? if($user->profile_pic != ""): ?>
-			<div class="profile-pic">
-				<img src="<?=$user->profile_pic?>" alt="<?=basename($user->profile_pic)?>" class="profile-image"/>
-			</div>
-		<? endif; ?>
+
+	<? if($user->profile_pic != ""): ?>
+		<div class="profile-pic">
+			<img src="<?=$user->profile_pic?>" alt="<?=basename($user->profile_pic)?>" class="profile-image"/>
+		</div>
+	<? endif; ?>
 
 	<div class="profile-info">
 
@@ -21,6 +21,5 @@
 		<a href='/users/editprofile'>Edit Profile</a>
 
 	</div>
-<br class="clearme">
+<br class="clear">
 <hr>
--->
