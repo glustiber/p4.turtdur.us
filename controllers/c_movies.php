@@ -62,8 +62,13 @@ class movies_controller extends base_controller {
 
         $this->template->content->results = $_POST[movies];
 
-        $client_files_head = Array('/js/movie-details.js');
-        $this->template->client_files_head = Utils::load_client_files($client_files_head);
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
         
         # Render the View
         echo $this->template->content;

@@ -12,12 +12,34 @@
 			<div class="user-options">
 				<p>
 					<a href='#' class='movie-info' id='<?=$result['id']?>'>Toggle Movie Info</a>
-					<a href='#' class='review' id='<?=$result['id']?>'>Rate &amp; Review</a>
+					<a href='#' class='review' id='<?=$result['id']?>'>Rate &amp; Review</a><br>
+					<a href='#' class='reviews-list' id='<?=$result['id']?>'>Read reviews</a>
 				</p>
 			</div>
 		</div>
-
 		<div class="clear"></div>
+		<div class="view-reviews" id="<?=$result['id']?>reviews">
+		<hr>
+		<h4>Reviews for <?=$result['title']?></h4>
+			<?php foreach($reviews as $review): ?>
+
+			<?php if($review['movie_id'] == $result['id']): ?>
+
+			<article class="review">
+
+			    <!--<h4><?=$post['first_name']?> <?=$post['last_name']?> posted:</h4>-->
+			    <p><?=$review['first_name']?> <?=$review['last_name']?> wrote:</p>
+			    <p><?=$review['content']?></p>
+
+	        <?=Time::display($review['created'],'m/d/Y')?> &#149
+	        <?=Time::display($review['created'],'g:i a')?>
+
+			</article><br>
+
+			<?php endif; ?>
+
+			<?php endforeach; ?>
+		</div>
 		<div class="write-review" id='<?=$result['id']?>review'>
 		<hr>
 		<h4>Write a Review for <?=$result['title']?></h4>
