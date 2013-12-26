@@ -6,7 +6,7 @@ class reviews_controller extends base_controller {
         parent::__construct();
 
         if(!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
+            Router::redirect("/users/login"); 
         }
     }
 

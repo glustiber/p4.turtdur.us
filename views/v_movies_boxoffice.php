@@ -28,7 +28,7 @@
 			<article class="review">
 
 			    <!--<h4><?=$post['first_name']?> <?=$post['last_name']?> posted:</h4>-->
-			    <p><?=$review['first_name']?> <?=$review['last_name']?> wrote:</p>
+			    <p><strong><?=$review['first_name']?> <?=$review['last_name']?></strong> rated this <strong><?=$review['rating']?></strong>:</p>
 			    <p><?=$review['content']?></p>
 
 	        <?=Time::display($review['created'],'m/d/Y')?> &#149

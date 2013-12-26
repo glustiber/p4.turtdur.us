@@ -21,22 +21,23 @@
 		<div class="view-reviews" id="<?=$result['id']?>reviews">
 		<hr>
 		<h4>Reviews for <?=$result['title']?></h4>
+
 			<?php foreach($reviews as $review): ?>
 
-			<?php if($review['movie_id'] == $result['id']): ?>
+				<?php if($review['movie_id'] == $result['id']): ?>
 
-			<article class="review">
+					<article class="review">
 
-			    <!--<h4><?=$post['first_name']?> <?=$post['last_name']?> posted:</h4>-->
-			    <p><?=$review['first_name']?> <?=$review['last_name']?> wrote:</p>
-			    <p><?=$review['content']?></p>
+					    <!--<h4><?=$post['first_name']?> <?=$post['last_name']?> posted:</h4>-->
+					    <p><strong><?=$review['first_name']?> <?=$review['last_name']?></strong> rated this <strong><?=$review['rating']?></strong>:</p>
+					    <p><?=$review['content']?></p>
 
-	        <?=Time::display($review['created'],'m/d/Y')?> &#149
-	        <?=Time::display($review['created'],'g:i a')?>
+			        <?=Time::display($review['created'],'m/d/Y')?> &#149
+			        <?=Time::display($review['created'],'g:i a')?>
 
-			</article><br>
+					</article><br>
 
-			<?php endif; ?>
+				<?php endif; ?>
 
 			<?php endforeach; ?>
 		</div>
