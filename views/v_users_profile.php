@@ -32,31 +32,14 @@
 
 			<?php foreach($reviews as $review): ?>
 
-			<article class="review">
+			<article class="movie-box">
 
 			    <!--<h4><?=$post['first_name']?> <?=$post['last_name']?> posted:</h4>-->
-			    <h4><?=$review['movie_id']?></h4>
+			    <h4><?=$review['movie_title']?> (Rating: <?=$review['rating']?>)</h4>
 			    <p><?=$review['content']?></p>
 
 	        <?=Time::display($review['created'],'m/d/Y')?> &#149
 	        <?=Time::display($review['created'],'g:i a')?>
-
-<!--				<p>
-
-					<? if(isset($numlikes[$post['post_id']])): ?>
-						<? if($numlikes[$post['post_id']]['num_likes'] == 1): ?>
-							<?=$numlikes[$post['post_id']]['num_likes']?> like
-						<? else: ?>
-							<?=$numlikes[$post['post_id']]['num_likes']?> likes
-				    	<? endif; ?>
-				    <? else: ?>
-				    	0 likes
-				    <? endif; ?>
-				    
-				    <a href="/posts/edit/<?=$post['post_id']?>">Edit</a>
-				    <a href="/posts/delete/<?=$post['post_id']?>">Delete</a>
-
-			    </p>-->
 
 			</article><br>
 

@@ -20,12 +20,13 @@ class reviews_controller extends base_controller {
 
     }
 
-    public function p_add($movie_id) {
+    public function p_add($movie_id,$movie_title) {
 
         $_POST['user_id']  = $this->user->user_id;
         $_POST['first_name']  = $this->user->first_name;
         $_POST['last_name']  = $this->user->last_name;
         $_POST['movie_id'] = $movie_id;
+        $_POST['movie_title'] = $movie_title;
         $_POST['created']  = Time::now();
         $_POST['modified'] = Time::now();
 

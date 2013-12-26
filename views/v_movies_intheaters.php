@@ -13,7 +13,7 @@
 				<p>
 					<a href='#' class='movie-info' id='<?=$result['id']?>'>Toggle Movie Info</a>
 					<a href='#' class='review' id='<?=$result['id']?>'>Rate &amp; Review</a><br>
-					<a href='#' class='reviews-list' id='<?=$result['id']?>'>Read reviews</a>
+					<a href='#' class='reviews-list' id='<?=$result['id']?>'>Toggle Reviews</a>
 				</p>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 		<hr>
 		<h4>Write a Review for <?=$result['title']?></h4>
 
-			<form method='POST' action='/reviews/p_add/<?=$result['id']?>'>
+			<form method='POST' action='/reviews/p_add/<?=$result['id']?>/<?=$result['title']?>'>
 
 				<label for='rating'><strong>Rating:</strong> </label><input type='range' name='rating' class='rating' id='<?=$result['id']?>rating' min='1' max='100' step ='1' required></input><span id='<?=$result['id']?>ratingcurrent'></span><br><br>
 				<script>

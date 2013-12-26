@@ -37,6 +37,14 @@ class movies_controller extends base_controller {
 */
         $this->template->content->results = $_POST[movies];
 
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
+
         # Render the View
         echo $this->template->content;
 
@@ -49,6 +57,14 @@ class movies_controller extends base_controller {
         $this->template->title   = "Top Rentals";
 
         $this->template->content->results = $_POST[movies];
+
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
 
         # Render the View
         echo $this->template->content;
@@ -93,6 +109,14 @@ class movies_controller extends base_controller {
         $this->template->title   = "Box Office";
 
         $this->template->content->results = $_POST[movies];
+
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
         
         # Render the View
         echo $this->template->content;
@@ -117,6 +141,14 @@ class movies_controller extends base_controller {
         $this->template->title   = "Current Releases";
 
         $this->template->content->results = $_POST[movies];
+
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
         
         # Render the View
         echo $this->template->content;
@@ -129,6 +161,14 @@ class movies_controller extends base_controller {
         $this->template->title   = "New Releases";
 
         $this->template->content->results = $_POST[movies];
+
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
         
         # Render the View
         echo $this->template->content;
@@ -141,6 +181,14 @@ class movies_controller extends base_controller {
         $this->template->title   = "Upcoming DVDs";
 
         $this->template->content->results = $_POST[movies];
+
+        $q = "SELECT *
+            FROM reviews
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
         
         # Render the View
         echo $this->template->content;

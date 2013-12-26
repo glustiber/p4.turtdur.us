@@ -51,6 +51,7 @@ $('#search-bar-submit').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -74,6 +75,14 @@ $('#search-bar-submit').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -120,6 +129,7 @@ $('#search-bar-input').keypress(function (e) {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -143,6 +153,14 @@ $('#search-bar-input').keypress(function (e) {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -224,6 +242,7 @@ $('#top-rentals').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -247,6 +266,14 @@ $('#top-rentals').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -287,6 +314,7 @@ $('#in-theaters').click(function() {
 				$('.inner-content').html(response);
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -310,6 +338,14 @@ $('#in-theaters').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 /*
 				$('.review').click(function() {
@@ -367,6 +403,7 @@ $('#coming-soon').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -390,6 +427,14 @@ $('#coming-soon').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -430,6 +475,7 @@ $('#box-office').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -453,6 +499,14 @@ $('#box-office').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -483,6 +537,7 @@ $('#opening').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -506,6 +561,14 @@ $('#opening').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -536,7 +599,7 @@ $('#current-releases').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
-				$('.view-reviews').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -564,7 +627,7 @@ $('#current-releases').click(function() {
 
 				$('.reviews-list').click(function() {
 					var movieId = $(this).attr('id');
-					//console.log(movieId);
+					console.log(movieId);
 					//$('#'+movieId+'info').css('display','none');
 					$('#'+movieId+'reviews').toggle();
 					return false;
@@ -599,6 +662,7 @@ $('#new-releases').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -622,6 +686,14 @@ $('#new-releases').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
@@ -652,6 +724,7 @@ $('#upcoming-dvds').click(function() {
 
 				$('.additional-info').css('display','none');
 				$('.write-review').css('display','none');
+				$('div.view-reviews').css('display','none');
 
 				$('.movie-info').click(function() {
 					var movieId = $(this).attr('id');
@@ -675,6 +748,14 @@ $('#upcoming-dvds').click(function() {
 					var movieId = $(this).attr('id');
 					var currentRating = $(this).val();
 					$('#'+movieId + 'current').html(currentRating);
+				});
+
+				$('.reviews-list').click(function() {
+					var movieId = $(this).attr('id');
+					console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'reviews').toggle();
+					return false;
 				});
 			},
 		});
