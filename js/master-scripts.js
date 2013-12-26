@@ -9,6 +9,19 @@ $('#nav-list > li > a').click(function(){
 
 });
 
+/*
+$(document).ajaxComplete(function(){
+    // fire when any Ajax requests complete
+    console.log('WHAT');
+    $('.additional-info').css('display','none');
+	$('.movie-info').click(function() {
+		var movieId = $(this).attr('id');
+		console.log(movieId);
+		$('#'+movieId+'info').css('display','block');
+	});
+
+});*/
+
 var apikey = "u8fuatjbufuhjzsq8rtg9bgt";
 var baseUrl = "http://api.rottentomatoes.com/api/public/v1.0";
 
@@ -131,7 +144,6 @@ var currentReleasesUrl = baseUrl + '/lists/dvds/current_releases.json?page_limit
 var newReleasesUrl = baseUrl + '/lists/dvds/new_releases.json?page_limit=15&page=1&country=us&apikey=' + apikey;
 var upcomingDvdsUrl = baseUrl + '/lists/dvds/upcoming.json?page_limit=15&page=1&country=us&apikey=' + apikey;
 
-
 $('#top-rentals').click(function() {
 
 	$.ajax({
@@ -155,6 +167,33 @@ $('#top-rentals').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
 
@@ -192,7 +231,49 @@ $('#in-theaters').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
+/*
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$.ajax({
+						type:'POST',
+						url:'/reviews/add/'+ movieId,
+						success: function(response) {
+							$('.inner-content').html(response);
+						},
+					});
+					return false;
+				});				
+*/
 			},
+
 		});
 
 		/*
@@ -229,9 +310,35 @@ $('#coming-soon').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
-
 
 	 	/*$('.inner-content').html('<h2>Coming Soon to a Theater Near You</h2>');
 	 	var movies = data.movies;
@@ -266,6 +373,33 @@ $('#box-office').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
 
@@ -292,6 +426,33 @@ $('#opening').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
 
@@ -318,6 +479,33 @@ $('#current-releases').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
 
@@ -344,6 +532,33 @@ $('#new-releases').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
 
@@ -370,6 +585,33 @@ $('#upcoming-dvds').click(function() {
 			data: movies,
 			success: function(response) {
 				$('.inner-content').html(response);
+
+				$('.additional-info').css('display','none');
+				$('.write-review').css('display','none');
+
+				$('.movie-info').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'info').toggle();
+					return false;
+				});
+
+				$('.review').click(function() {
+					var movieId = $(this).attr('id');
+					//console.log(movieId);
+					//$('#'+movieId+'info').css('display','none');
+					$('#'+movieId+'review').toggle();
+					return false;
+				});
+
+				$('.rating').on('change', function() { 
+					console.log($(this).attr('id'));
+					console.log($(this).val());
+					var movieId = $(this).attr('id');
+					var currentRating = $(this).val();
+					$('#'+movieId + 'current').html(currentRating);
+				});
 			},
 		});
 

@@ -151,6 +151,15 @@ class users_controller extends base_controller {
         # $title is another variable used in _v_template to set the <title> of the page
         $this->template->title = "Profile of ".$this->user->first_name;
 
+        $q = "SELECT *
+            FROM reviews
+            WHERE user_id = '".$this->user->user_id."'
+            ORDER BY created DESC";
+
+        $reviews = DB::instance(DB_NAME)->select_rows($q);
+
+        $this->template->content->reviews = $reviews;
+
 /*
         $q = "SELECT *
             FROM posts

@@ -81,7 +81,7 @@ header {
 .left-nav {
 	display:block;
 	float:left;
-	overflow:auto;
+	overflow:none;
 	height:100%;
 	position:absolute;
 	left:0;
@@ -120,7 +120,7 @@ header {
 	background-color:rgb(245,245,245);
 	border-top:1px solid black;
 	border-bottom:1px solid black;
-	box-shadow:0px 1px 5px rgba(0,0,0,0.25);
+	/*box-shadow:0px 1px 5px rgba(0,0,0,0.25);*/
 	z-index:-250;
 	font-weight:bold;
 }
@@ -129,7 +129,7 @@ header {
 	background-color:rgb(245,245,245);
 	border-top:1px solid black;
 	border-bottom:1px solid black;
-	box-shadow:9px 1px 5px rgba(0,0,0,0.25);
+	/*box-shadow:9px 1px 5px rgba(0,0,0,0.25);*/
 	z-index:250;
 	font-weight:bold;
 
@@ -142,7 +142,7 @@ header {
 
 #nav-list li ul li a {
 	padding:5px 30px;
-	background:white;
+	background:rgb(245,245,245);
 	/*background:grey;
 	color:ghostwhite;*/
 }
@@ -192,7 +192,7 @@ header {
 }
 
 .movie-poster {
-	width:100px;
+	width:130px;
 	float:left;
 	margin-right:10px;
 }
@@ -202,9 +202,9 @@ header {
 }
 
 .movie-menu-title {
-	padding:7.5px;
-	background-color:grey;
-	color:ghostwhite;
+	padding:3px;
+	background-color:#555;
+	color:rgb(245,245,245);
 }
 
 .movie-box {
@@ -212,7 +212,7 @@ header {
 	background-color:white!important;
 	padding:5px!important;
 	margin-bottom:5px!important;
-	line-height:0.25em;
+	width:650px;
 }
 
 .header-menu-item > ul {
@@ -279,19 +279,31 @@ header {
 }
 
 .user-options {
-	/*width:20%;
-	height:100px;
-	float:right;*/
-	float:right;
-	width:175px;
-	height:150px;
-	border:1px solid black;
-	padding-left:5px;
-	padding-right:5px;
+	padding:0px!important;
 }
 
-.user-options p {
-	padding:5px;
+.user-options li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+}
+
+
+.synopsis {
+	font-style:italic;
+	line-height:100%!important;
+}
+
+.movie-info {
+	width:75%!important;
+	float:left!important;
+	min-width:500px!important;
+
+}
+
+.write-review textarea#content {
+	width:400px!important;
+	height:100px!important;
 }
 
 

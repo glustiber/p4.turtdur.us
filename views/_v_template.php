@@ -6,9 +6,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 
 	<link rel="stylesheet" type="text/css" href="/css/master-styles.css">
+
 	<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
 	<!--<script src="/js/tooltip.js"></script>-->
 	<!--<script src="/js/popover.js"></script>-->
 
@@ -29,8 +31,6 @@
 					<ul>
 						<li><a href='/users/profile/'>view profile</a></li>
 			    		<li><a href='/users/editprofile'>edit profile</a></li>
-			    		<li><a href='/users/mymovies'>my movies</a></li>
-			    		<li><a href='/users/myfriends'>my friends</a></li>
 			    	</ul>			
 			    	</div>
 					<div class='header-menu-item'><a href='/users/logout'>logout</a></div>
